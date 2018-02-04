@@ -1,0 +1,21 @@
+.table-card {
+  display: inline-block;
+
+  &__person {
+    &_mode {
+      &_inactive {
+        opacity: 0.3;
+      }
+    }
+  }
+
+  &__persons {
+    margin: 0 auto;
+    width: 145px;
+    white-space: initial;
+  }
+
+  &__actions {
+    white-space: nowrap;
+  }
+}

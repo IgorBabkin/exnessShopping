@@ -1,0 +1,15 @@
+.home {
+  &__table-list {
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__add-button {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+  }
+}
