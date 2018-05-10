@@ -1,8 +1,8 @@
 import * as React from 'react';
-import './root.scss';
+import './layout.scss';
 import {MuiThemeProvider} from 'material-ui/styles';
 
-class Component extends React.PureComponent<any> {
+export class LayoutComponent extends React.PureComponent<any> {
     render() {
         return (
             <MuiThemeProvider>
@@ -11,5 +11,3 @@ class Component extends React.PureComponent<any> {
         );
     }
 }
-
-export const RootComponent = Component;

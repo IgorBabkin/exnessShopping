@@ -1,14 +1,14 @@
 import {render} from 'react-dom';
 import * as React from 'react';
-import {Application} from './bootstrap';
+import configureStore from 'store/configureStore';
+import {Application} from 'application/application';
 import {Provider} from 'react-redux';
-import configureStore from './store/configureStore';
 
 render(
     <Provider store={configureStore()}>
         <Application/>
     </Provider>,
-    document.getElementById('root')
+    document.getElementById('root'),
 );
 
 // check if HMR is enabled

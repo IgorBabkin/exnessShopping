@@ -1,40 +1,30 @@
 import * as React from 'react';
-import {ReactNode} from 'react';
-import {Card, CardActions, CardText, CardTitle, FlatButton, FontIcon} from 'material-ui';
-import {participantsToBoolean} from './tableCard.helper';
 import './tableCard.scss';
-import {Table, TableId} from 'domain/table.interface';
+import {IBasketProduct, ProductCount} from '../list/product.interface';
+import {ProductId} from '../../../../domain/product.interface';
 
 type IProps = {
-    table: Table;
-    onDelete: (id: TableId) => void;
-    onEdit: (id: TableId) => void;
-}
+    product: IBasketProduct;
+    onEdit: (id: ProductId, count: ProductCount) => void;
+    onDelete: (id: ProductId) => void;
+};
 
-function renderPersons(participants: number): ReactNode[] {
-    const activeClassName = 'material-icons';
-    const inactiveClassName = `${activeClassName} table-card__person_mode_inactive`;
+const BasketRow: React.StatelessComponent<IProps> = ({product, onEdit, onDelete}) => {
+    const {id, name, count} = product;
 
-    return participantsToBoolean(participants).map((isActive, index) =>
-        <FontIcon key={index} className={isActive ? activeClassName : inactiveClassName}>person</FontIcon>
-    );
-}
-
-const TableCard: React.StatelessComponent<IProps> = ({table, onEdit, onDelete}) => {
-    const {id, name, participants} = table;
+    const onEditHandler = () => onEdit(id, count);
+    const onDeleteHandler = () => onDelete(id);
 
     return (
-        <Card className="table-card">
-            <CardTitle title={name}/>
-            <CardText className="table-card__persons">
-                {renderPersons(participants)}
-            </CardText>
-            <CardActions className="table-card__actions">
-                <FlatButton onClick={() => onEdit(id)}>Edit</FlatButton>
-                <FlatButton onClick={() => onDelete(id)} secondary={true}>Delete</FlatButton>
-            </CardActions>
-        </Card>
+        <tr key={id}>
+            <td>{id}</td>
+            <td>{name}</td>
+            <td>
+                <input type="number" value={count} onChange={onEditHandler}/>
+                <button onClick={onDeleteHandler}>Delete</button>
+            </td>
+        </tr>
     );
 };
 
-export default TableCard;
+export default BasketRow;

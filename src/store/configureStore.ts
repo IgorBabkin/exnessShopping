@@ -5,7 +5,7 @@ import thunk from 'redux-thunk';
 import reducers from 'store/reducers';
 import {IState} from 'domain/state.interface';
 import {Connection} from '../services/connection';
-import {CONNECTION_URL} from '../config';
+import {CONNECTION_URL} from '../application/config';
 
 const composeEnhancers = composeWithDevTools({
     // Specify name here, actionsBlacklist, actionsCreators and other options if needed

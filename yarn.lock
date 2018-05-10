@@ -3699,6 +3699,16 @@ html-loader@^0.5.4:
     loader-utils "^1.1.0"
     object-assign "^4.1.1"
 
+html-loader@^0.5.5:
+  version "0.5.5"
+  resolved "https://registry.yarnpkg.com/html-loader/-/html-loader-0.5.5.tgz#6356dbeb0c49756d8ebd5ca327f16ff06ab5faea"
+  dependencies:
+    es6-templates "^0.2.3"
+    fastparse "^1.1.1"
+    html-minifier "^3.5.8"
+    loader-utils "^1.1.0"
+    object-assign "^4.1.1"
+
 html-minifier@^3.2.3, html-minifier@^3.5.8:
   version "3.5.8"
   resolved "https://registry.yarnpkg.com/html-minifier/-/html-minifier-3.5.8.tgz#5ccdb1f73a0d654e6090147511f6e6b2ee312700"
@@ -5312,6 +5322,10 @@ pinkie-promise@^2.0.0:
 pinkie@^2.0.0:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/pinkie/-/pinkie-2.0.4.tgz#72556b80cfa0d48a974e80e77248e80ed4f7f870"
+
+pixi@^0.3.1:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/pixi/-/pixi-0.3.1.tgz#858cd6164a32a1e4b41192cdf5c6d98209300ba8"
 
 pkg-dir@^2.0.0:
   version "2.0.0"

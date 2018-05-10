@@ -1,41 +1,36 @@
 import * as React from 'react';
-import {ComponentType} from 'react';
-import {AutoSizer, Grid} from 'react-virtualized';
-import {GridCellRenderer} from 'react-virtualized/dist/es/Grid';
 import './tableList.scss';
-import {Table} from 'domain/table.interface';
+import {IBasketProduct, ProductCount} from './product.interface';
+import BasketRow from '../card/tableCard.component';
+import {ProductId} from '../../../../domain/product.interface';
 
 type IProps = {
-    tables: Table[];
-    itemRenderer: ComponentType<{ table: Table }>;
-}
+    products: IBasketProduct[];
+    onItemChange: (id: ProductId, count: ProductCount) => void;
+    onItemDelete: (id: ProductId) => void;
+};
 
-const TableList: React.StatelessComponent<IProps> = ({tables, itemRenderer: ItemRenderer}) => {
-    const cellRenderer: GridCellRenderer = ({key, style, columnIndex}) => {
-        return (
-            <div key={key} style={style} className="table-list__item">
-                <ItemRenderer table={tables[columnIndex]}/>
-            </div>
-        );
-    };
-
+const BasketTable: React.StatelessComponent<IProps> = ({products, onItemChange, onItemDelete}) => {
     return (
-        <div>
-            <AutoSizer disableHeight>
-                {({width}) => (
-                    <Grid
-                        height={230}
-                        rowHeight={220}
-                        rowCount={1}
-                        width={width}
-                        cellRenderer={cellRenderer}
-                        columnCount={tables.length}
-                        columnWidth={220}
-                    />
-                )}
-            </AutoSizer>
-        </div>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Product name</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            {products.map(item => (
+                <BasketRow
+                    product={item}
+                    onEdit={onItemChange}
+                    onDelete={onItemDelete}
+                />
+            ))}
+            </tbody>
+        </table>
     );
 };
 
-export default TableList;
+export default BasketTable;

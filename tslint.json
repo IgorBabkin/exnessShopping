@@ -114,7 +114,7 @@
       "always-prefix"
     ],
     "jsx-boolean-value": [
-      true,
+      false,
       "never"
     ],
     "indent": [

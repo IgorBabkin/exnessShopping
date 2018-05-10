@@ -1,8 +1,7 @@
 import {addDecorator, configure} from '@storybook/react';
 import React from "react";
 import {setOptions} from "@storybook/addon-options";
-import 'components/pages/root.scss';
-import {MuiThemeProvider} from 'material-ui/styles';
+import {LayoutComponent} from "pages/layout/layout.component";
 
 setOptions({
     name: 'storybook',
@@ -15,9 +14,9 @@ setOptions({
 });
 
 const MaterialDecorator = (storyFn) => (
-    <MuiThemeProvider>
+    <LayoutComponent>
         {storyFn()}
-    </MuiThemeProvider>
+    </LayoutComponent>
 );
 addDecorator(MaterialDecorator);
 
