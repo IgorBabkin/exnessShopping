@@ -29,7 +29,8 @@
     "reselect": "^3.0.1",
     "socket.io-client": "^2.0.4",
     "typescript-fsa": "^2.5.0",
-    "typescript-fsa-reducers": "^0.4.5"
+    "typescript-fsa-reducers": "^0.4.5",
+    "typescript-fsa-redux-observable": "^0.18.0"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.3.6",

@@ -1,15 +1,15 @@
-import {ITableFormState, ITablesState} from './table.interface';
+import {IProducts} from './table.interface';
 import {Store} from 'react-redux';
 import {IConnection} from 'services/connection.inteface';
+import {IBasket} from './basket.interface';
 
-export interface IState {
-    tables: ITablesState;
-    form: any;
-    tableForm: ITableFormState;
+export interface IAppState {
+    products: IProducts;
+    basket: IBasket;
 }
 
-export type IStore = Store<IState>;
+export type IAppStore = Store<IAppState>;
 
 export type IDependencies = {
-    connection: IConnection
-}
+    connection: IConnection,
+};

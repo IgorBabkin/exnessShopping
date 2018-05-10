@@ -121,7 +121,8 @@
       true,
       "spaces",
       2
-    ]
+    ],
+    "no-namespace": false
   },
   "rulesDirectory": []
 }

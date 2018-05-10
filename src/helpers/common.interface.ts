@@ -1,10 +1,8 @@
-import {Dispatch} from 'react-redux';
-import {Selector} from 'reselect';
+import {MapStateToProps as ReduxStateToProps} from 'react-redux';
 import {Reducer} from 'redux';
-import {IState} from 'domain/state.interface';
+import {IAppState} from 'domain/state.interface';
 
-export type MapStateToProps<R> = Selector<IState, R>;
-export type MapDispatchToProps<P> = (dispatch: Dispatch<IState>) => P;
+export type MapStateToProps<StateProps, OwnProps = {}> = ReduxStateToProps<StateProps, OwnProps, IAppState>;
 export type IReducers = {
-    [key in keyof IState]: Reducer<IState[key]>
-    }
+    [key in keyof IAppState]: Reducer<IAppState[key]>
+};

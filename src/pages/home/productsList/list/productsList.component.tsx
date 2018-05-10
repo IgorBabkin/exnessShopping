@@ -8,7 +8,7 @@ const ProductsList: React.StatelessComponent<IProductsListProps> =
         return (
             <div className="products-list">
                 {products.map(item => (
-                    <div className="products-list__item">
+                    <div className="products-list__item" key={item.id}>
                         <ProductItem
                             product={item}
                             onAddToBasket={onAddToBasket}

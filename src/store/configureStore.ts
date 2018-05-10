@@ -1,21 +1,19 @@
 import {applyMiddleware, combineReducers, createStore} from 'redux';
-import {Store} from 'react-redux';
-import {composeWithDevTools} from 'redux-devtools-extension';
-import thunk from 'redux-thunk';
 import reducers from 'store/reducers';
-import {IState} from 'domain/state.interface';
-import {Connection} from '../services/connection';
-import {CONNECTION_URL} from '../application/config';
+import {dependencies} from './dependencies';
+import {getInitialState} from './initialState';
+import {IAppStore} from '../domain/state.interface';
+import thunk from 'redux-thunk';
+import {composeWithDevTools} from 'redux-devtools-extension';
 
-const composeEnhancers = composeWithDevTools({
+export const composeEnhancers = composeWithDevTools({
     // Specify name here, actionsBlacklist, actionsCreators and other options if needed
 });
 
-export default function configureStore(): Store<IState> {
+export default function configureStore(): IAppStore {
     return createStore(
         combineReducers(reducers),
-        composeEnhancers(applyMiddleware(thunk.withExtraArgument({
-            connection: new Connection(CONNECTION_URL)
-        })))
+        getInitialState(),
+        composeEnhancers(applyMiddleware(thunk.withExtraArgument(dependencies))),
     );
 }

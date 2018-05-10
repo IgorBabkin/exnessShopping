@@ -13,6 +13,7 @@ module.exports = {
     },
     resolve: commonConfig.resolve,
     module: commonConfig.module,
+    devtool: 'source-map',
 
     plugins: [
         new HtmlWebpackPlugin({
