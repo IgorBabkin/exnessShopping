@@ -1,35 +1,28 @@
 import {reducerWithInitialState} from 'typescript-fsa-reducers';
-import {BasketActions, IUpdateActionPayload} from './basket.actions';
-import {IBasket} from '../../domain/basket.interface';
-import {ProductId} from '../../domain/product.interface';
-import {find} from 'lodash';
+import {BasketActions, IAddActionPayload, IUpdateActionPayload} from './basket.actions';
+import {IOrder, OrderItemId} from '../../domain/order.interface';
 
-export const basketReducer = reducerWithInitialState<IBasket>([])
+export const basketReducer = reducerWithInitialState<IOrder>([])
     .case(BasketActions.Add, addItemHandler)
     .case(BasketActions.Increment, incrementItemHandler)
     .case(BasketActions.Update, updateItemHandler)
     .case(BasketActions.Decrement, decrementItemHandler)
     .case(BasketActions.Delete, deleteItemHandler);
 
-function addItemHandler(state: IBasket, productId: ProductId): IBasket {
-    const basketItem = find(state, item => item.productId === productId);
-
-    if (basketItem) {
-        return incrementItemHandler(state, productId);
-    }
-
+function addItemHandler(state: IOrder, payload: IAddActionPayload): IOrder {
     return [
         ...state,
         {
-            productId,
+            id: state.length,
             count: 1,
+            ...payload,
         },
     ];
 }
 
-function incrementItemHandler(state: IBasket, productId: ProductId): IBasket {
+function incrementItemHandler(state: IOrder, id: OrderItemId): IOrder {
     return state.map(item => {
-        if (item.productId === productId) {
+        if (item.id === id) {
             return {
                 ...item,
                 count: item.count + 1,
@@ -40,9 +33,9 @@ function incrementItemHandler(state: IBasket, productId: ProductId): IBasket {
     });
 }
 
-function decrementItemHandler(state: IBasket, productId: ProductId): IBasket {
+function decrementItemHandler(state: IOrder, id: OrderItemId): IOrder {
     return state.map(item => {
-        if (item.productId === productId) {
+        if (item.id === id) {
             return {
                 ...item,
                 count: Math.max(item.count - 1, 0),
@@ -53,9 +46,9 @@ function decrementItemHandler(state: IBasket, productId: ProductId): IBasket {
     });
 }
 
-function updateItemHandler(state: IBasket, {productId, count}: IUpdateActionPayload): IBasket {
+function updateItemHandler(state: IOrder, {id, count}: IUpdateActionPayload): IOrder {
     return state.map(item => {
-        if (item.productId === productId) {
+        if (item.id === id) {
             return {
                 ...item,
                 count: Math.max(count, 0),
@@ -66,6 +59,6 @@ function updateItemHandler(state: IBasket, {productId, count}: IUpdateActionPayl
     });
 }
 
-function deleteItemHandler(state: IBasket, productId: ProductId): IBasket {
-    return state.filter(item => item.productId !== productId);
+function deleteItemHandler(state: IOrder, id: OrderItemId): IOrder {
+    return state.filter(item => item.id !== id);
 }

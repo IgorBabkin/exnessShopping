@@ -1,9 +1,16 @@
-import {Money, ProductId, ProductName} from '../../../../domain/product.interface';
+import {Money, ProductId, ProductName, Size} from '../../../../domain/product.interface';
+import {IAddActionPayload} from '../../../../reducers/basket/basket.actions';
 
 export interface IProductItem {
     id: ProductId;
     name: ProductName;
     price: Money;
+    sizes: Size[];
 }
 
-export type AddToBasketCallback = (id: ProductId) => void;
+export interface IProductItemProps {
+    product: IProductItem;
+    onAddToBasket: AddToBasketCallback;
+}
+
+export type AddToBasketCallback = (data: IAddActionPayload) => void;

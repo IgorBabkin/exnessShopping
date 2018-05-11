@@ -6,7 +6,9 @@ export class LayoutComponent extends React.PureComponent<any> {
     render() {
         return (
             <MuiThemeProvider>
-                {this.props.children}
+                <div>
+                    {this.props.children}
+                </div>
             </MuiThemeProvider>
         );
     }

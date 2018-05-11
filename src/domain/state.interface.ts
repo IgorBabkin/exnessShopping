@@ -1,11 +1,11 @@
-import {IProducts} from './table.interface';
+import {IProducts} from './product.interface';
 import {Store} from 'react-redux';
 import {IConnection} from 'services/connection.inteface';
-import {IBasket} from './basket.interface';
+import {IOrder} from './order.interface';
 
 export interface IAppState {
     products: IProducts;
-    basket: IBasket;
+    basket: IOrder;
 }
 
 export type IAppStore = Store<IAppState>;

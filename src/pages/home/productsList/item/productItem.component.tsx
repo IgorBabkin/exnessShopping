@@ -1,25 +1,42 @@
 import * as React from 'react';
-import {AddToBasketCallback, IProductItem} from './productItem.interface';
+import {SyntheticEvent} from 'react';
+import {IProductItemProps} from './productItem.interface';
 import './productCard.scss';
+import {Size} from 'domain/product.interface';
 
-interface IProps {
-    product: IProductItem;
-    onAddToBasket: AddToBasketCallback;
+class ProductItem extends React.PureComponent<IProductItemProps> {
+    private sizeSelector: HTMLSelectElement;
+
+    render() {
+        const {id, name, price, sizes} = this.props.product;
+
+        return (
+            <form className="product-card" onSubmit={this.onSubmit}>
+                <div>{id}</div>
+                <div>{name}</div>
+                <div>{price}</div>
+                <div>
+                    <select name="size" ref={node => this.sizeSelector = node}>
+                        {sizes.map(size => (
+                            <option key={size} value={size}>{size}</option>
+                        ))}
+                    </select>
+                </div>
+                <button type="submit">Add to basket</button>
+            </form>
+        );
+    }
+
+    private onSubmit = (e: SyntheticEvent<HTMLFormElement>) => {
+        e.preventDefault();
+
+        const {product: {id: productId}, onAddToBasket} = this.props;
+
+        onAddToBasket({
+            productId,
+            size: this.sizeSelector.value as Size,
+        });
+    }
 }
-
-const ProductItem: React.StatelessComponent<IProps> = ({product, onAddToBasket}) => {
-    const {id, name, price} = product;
-
-    const AddToBasketHandler = () => onAddToBasket(id);
-
-    return (
-        <div className="product-card">
-            <div>{id}</div>
-            <div>{name}</div>
-            <div>{price}</div>
-            <button onClick={AddToBasketHandler}>Add to basket</button>
-        </div>
-    );
-};
 
 export default ProductItem;

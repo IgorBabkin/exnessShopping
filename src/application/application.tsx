@@ -1,10 +1,11 @@
 import * as React from 'react';
 import {LayoutComponent} from 'pages/layout/layout.component';
 import {Route, withRouter} from 'react-router';
-import {HomePage} from 'pages/home/homePage.container';
+import {HomePage} from 'pages/home/homePage.component';
 import {BrowserRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {startApp, stopApp} from './application.helpers';
+import {OrderPage} from '../pages/order/checkoutPage.component';
 
 type IProps = {
     onStart: () => void;
@@ -27,6 +28,7 @@ class Component extends React.PureComponent<IProps> {
             <BrowserRouter>
                 <Layout>
                     <Route path="/" component={HomePage} exact={true}/>
+                    <Route path="/order" component={OrderPage} exact={true}/>
                 </Layout>
             </BrowserRouter>
         );

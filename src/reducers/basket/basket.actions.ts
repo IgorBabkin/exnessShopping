@@ -1,18 +1,23 @@
 import actionCreatorFactory from 'typescript-fsa';
-import {ProductId} from '../../domain/product.interface';
-import {BasketItemCount} from '../../domain/basket.interface';
+import {OrderItemId} from '../../domain/order.interface';
+import {ProductId, Size} from '../../domain/product.interface';
 
 const actionCreator = actionCreatorFactory('Basket');
 
-export interface IUpdateActionPayload {
+export interface IAddActionPayload {
     productId: ProductId;
-    count: BasketItemCount;
+    size: Size;
+}
+
+export interface IUpdateActionPayload {
+    id: OrderItemId;
+    count: number;
 }
 
 export const BasketActions = {
-    Add: actionCreator<ProductId>('ADD'),
-    Increment: actionCreator<ProductId>('INCREMENT'),
-    Decrement: actionCreator<ProductId>('DECREMENT'),
+    Add: actionCreator<IAddActionPayload>('ADD'),
+    Increment: actionCreator<OrderItemId>('INCREMENT'),
+    Decrement: actionCreator<OrderItemId>('DECREMENT'),
     Update: actionCreator<IUpdateActionPayload>('UPDATE'),
-    Delete: actionCreator('DELETE'),
+    Delete: actionCreator<OrderItemId>('DELETE'),
 };
