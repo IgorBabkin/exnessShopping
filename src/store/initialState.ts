@@ -1,10 +1,9 @@
 import {IAppState} from '../domain/state.interface';
 import {Size} from '../domain/product.interface';
-import {IBasketStorage} from '../services/IBasketStorage';
 
-export function getInitialState(basketStorage: IBasketStorage): IAppState {
+export function getInitialState(): IAppState {
     return {
-        basket: basketStorage.getState(),
+        basket: [],
         products: {
             0: {
                 name: 'IPhone',

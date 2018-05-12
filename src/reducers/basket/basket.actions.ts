@@ -1,5 +1,5 @@
 import actionCreatorFactory from 'typescript-fsa';
-import {OrderItemId} from '../../domain/order.interface';
+import {IOrder, OrderItemId} from '../../domain/order.interface';
 import {ProductId, Size} from '../../domain/product.interface';
 
 const actionCreator = actionCreatorFactory('Basket');
@@ -20,4 +20,5 @@ export const BasketActions = {
     Decrement: actionCreator<OrderItemId>('DECREMENT'),
     Update: actionCreator<IUpdateActionPayload>('UPDATE'),
     Delete: actionCreator<OrderItemId>('DELETE'),
+    Restore: actionCreator<IOrder>('RESTORE'),
 };

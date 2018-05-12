@@ -9,7 +9,7 @@ export default function configureStore(): IAppStore {
     const dependencies = createDependencies();
     return createStore(
         rootReducer,
-        getInitialState(dependencies.basketStorage),
+        getInitialState(),
         createMiddleware(dependencies),
     );
 }

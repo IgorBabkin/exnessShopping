@@ -7,6 +7,7 @@ export const basketReducer = reducerWithInitialState<IOrder>([])
     .case(BasketActions.Increment, incrementItemHandler)
     .case(BasketActions.Update, updateItemHandler)
     .case(BasketActions.Decrement, decrementItemHandler)
+    .case(BasketActions.Restore, (state, payload) => payload)
     .case(BasketActions.Delete, deleteItemHandler);
 
 function addItemHandler(state: IOrder, payload: IAddActionPayload): IOrder {
