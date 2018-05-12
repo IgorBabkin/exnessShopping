@@ -2,7 +2,7 @@ import {IProducts} from './product.interface';
 import {Store} from 'react-redux';
 import {IConnection} from 'services/connection.inteface';
 import {IOrder} from './order.interface';
-import {IBasketStorage} from '../services/IBasketStorage';
+import {IBasketStorage} from '../services/basketStorage.interface';
 
 export interface IAppState {
     products: IProducts;

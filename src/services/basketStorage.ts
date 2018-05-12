@@ -1,4 +1,4 @@
-import {IBasketStorage} from './IBasketStorage';
+import {IBasketStorage} from './basketStorage.interface';
 import {IOrder} from '../domain/order.interface';
 
 export class BasketStorage implements IBasketStorage {

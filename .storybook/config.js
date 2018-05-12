@@ -1,7 +1,7 @@
 import {addDecorator, configure} from '@storybook/react';
 import React from "react";
 import {setOptions} from "@storybook/addon-options";
-import {Layout} from "pages/layout/layout.component";
+import Layout from "pages/layout/layout.component";
 
 setOptions({
     name: 'storybook',
