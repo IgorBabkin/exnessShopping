@@ -1,41 +1,31 @@
 import * as React from 'react';
-import {LayoutComponent} from 'pages/layout/layout.component';
+import Layout from 'pages/layout/layout.component';
 import {Route, withRouter} from 'react-router';
 import {HomePage} from 'pages/home/homePage.component';
 import {BrowserRouter} from 'react-router-dom';
-import {connect} from 'react-redux';
-import {startApp, stopApp} from './application.helpers';
 import {OrderPage} from '../pages/order/checkoutPage.component';
+import {IApplicationProps} from './application.interface';
 
-type IProps = {
-    onStart: () => void;
-    onStop: () => void;
-};
+const RoutedLayout = withRouter(Layout);
 
-const Layout = withRouter(LayoutComponent);
-
-class Component extends React.PureComponent<IProps> {
+export default class Application extends React.PureComponent<IApplicationProps> {
     componentDidMount() {
+        window.addEventListener('unload', this.props.onUnload);
         this.props.onStart();
     }
 
     componentWillUnmount() {
-        this.props.onStop();
+        window.removeEventListener('unload', this.props.onUnload);
     }
 
     render() {
         return (
             <BrowserRouter>
-                <Layout>
+                <RoutedLayout>
                     <Route path="/" component={HomePage} exact={true}/>
                     <Route path="/order" component={OrderPage} exact={true}/>
-                </Layout>
+                </RoutedLayout>
             </BrowserRouter>
         );
     }
 }
-
-export const Application = connect<{}, IProps>(undefined, {
-    onStart: startApp,
-    onStop: stopApp,
-})(Component);

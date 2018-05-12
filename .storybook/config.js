@@ -1,7 +1,7 @@
 import {addDecorator, configure} from '@storybook/react';
 import React from "react";
 import {setOptions} from "@storybook/addon-options";
-import {LayoutComponent} from "pages/layout/layout.component";
+import {Layout} from "pages/layout/layout.component";
 
 setOptions({
     name: 'storybook',
@@ -14,9 +14,9 @@ setOptions({
 });
 
 const MaterialDecorator = (storyFn) => (
-    <LayoutComponent>
+    <Layout>
         {storyFn()}
-    </LayoutComponent>
+    </Layout>
 );
 addDecorator(MaterialDecorator);
 

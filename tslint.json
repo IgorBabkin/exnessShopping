@@ -15,8 +15,7 @@
       "check-space"
     ],
     "import-blacklist": [
-      true,
-      "rxjs"
+      true
     ],
     "interface-over-type-literal": false,
     "max-line-length": [
@@ -36,7 +35,7 @@
     "no-import-side-effect": [
       true,
       {
-        "ignore-module": "(\\.html|\\.scss)$"
+        "ignore-module": "(\\.html|\\.scss|rxjs|typescript-fsa-redux-observable)$"
       }
     ],
     "no-inferrable-types": [

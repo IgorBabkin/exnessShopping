@@ -1,12 +1,12 @@
 import {render} from 'react-dom';
 import * as React from 'react';
 import configureStore from 'store/configureStore';
-import {Application} from 'application/application';
 import {Provider} from 'react-redux';
+import {ShoppingApplication} from './application/shoppingApplication.container';
 
 render(
     <Provider store={configureStore()}>
-        <Application/>
+        <ShoppingApplication/>
     </Provider>,
     document.getElementById('root'),
 );
