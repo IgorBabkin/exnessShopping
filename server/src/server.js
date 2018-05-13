@@ -16,10 +16,8 @@ app.use((req, res, next) => {
     next();
 });
 
-const testRequestHandler = require('./handlers/test-request-handler');
 const productsRequestHandler = require('./handlers/products-request-handler');
 
-testRequestHandler(app);
 productsRequestHandler(app);
 
 // everything else is considered as unknown endpoint => 404

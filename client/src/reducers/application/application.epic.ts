@@ -26,4 +26,4 @@ const startEpic: Epic = (action$, store, {basketStorage}) =>
             ]),
         );
 
-export default combineEpics(startEpic, unloadEpic);
+export const applicationEpic = combineEpics(startEpic, unloadEpic);
