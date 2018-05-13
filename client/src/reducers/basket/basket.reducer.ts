@@ -1,6 +1,7 @@
 import {reducerWithInitialState} from 'typescript-fsa-reducers';
 import {BasketActions, IAddActionPayload, IUpdateActionPayload} from './basket.actions';
 import {IOrder, OrderItemId} from '../../domain/order.interface';
+import {distinctOrder} from './basket.helpers';
 
 export const basketReducer = reducerWithInitialState<IOrder>([])
     .case(BasketActions.Add, addItemHandler)
@@ -11,14 +12,14 @@ export const basketReducer = reducerWithInitialState<IOrder>([])
     .case(BasketActions.Delete, deleteItemHandler);
 
 function addItemHandler(state: IOrder, payload: IAddActionPayload): IOrder {
-    return [
+    return distinctOrder([
         ...state,
         {
             id: state.length,
             count: 1,
             ...payload,
         },
-    ];
+    ]);
 }
 
 function incrementItemHandler(state: IOrder, id: OrderItemId): IOrder {
