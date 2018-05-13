@@ -1,4 +1,4 @@
-import {Epic} from 'helpers/common.interface';
+import {Epic} from 'domain/common.interface';
 import 'rxjs';
 import 'typescript-fsa-redux-observable';
 import {combineEpics} from 'redux-observable';

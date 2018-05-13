@@ -1,4 +1,4 @@
-import {MapStateToProps} from 'helpers/common.interface';
+import {MapStateToProps} from 'domain/common.interface';
 import {IProductItem} from './item/productItem.interface';
 
 export const productsSelector: MapStateToProps<IProductItem[]> =

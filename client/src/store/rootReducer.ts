@@ -1,4 +1,4 @@
-import {IAppState, IReducers} from 'helpers/common.interface';
+import {IAppState, IReducers} from 'domain/common.interface';
 import {basketReducer} from 'reducers/basket/basket.reducer';
 import {combineReducers} from 'redux';
 import {productsReducer} from 'reducers/products/products.reducer';

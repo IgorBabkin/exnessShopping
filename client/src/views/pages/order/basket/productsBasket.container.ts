@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import {MapStateToProps} from '../../../../helpers/common.interface';
+import {MapStateToProps} from '../../../../domain/common.interface';
 import {BasketActions} from '../../../../reducers/basket/basket.actions';
 import BasketTable from './list/basketTable.component';
 import {IBasketTableDispatchProps, IBasketTableStateProps} from './list/basketTable.interface';

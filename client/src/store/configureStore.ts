@@ -1,5 +1,5 @@
 import {createStore} from 'redux';
-import {IAppStore} from '../helpers/common.interface';
+import {IAppStore} from '../domain/common.interface';
 import rootReducer from './rootReducer';
 import {createMiddleware} from './middleware';
 import {createDependencies} from './middleware/dependencies';

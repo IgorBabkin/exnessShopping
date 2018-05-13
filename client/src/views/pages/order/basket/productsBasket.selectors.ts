@@ -1,4 +1,4 @@
-import {MapStateToProps} from '../../../../helpers/common.interface';
+import {MapStateToProps} from '../../../../domain/common.interface';
 import {IBasketProduct} from './list/basketTable.interface';
 
 export const basketProductsSelector: MapStateToProps<IBasketProduct[]> =
