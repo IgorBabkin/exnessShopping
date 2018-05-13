@@ -4,12 +4,10 @@ const productsResponseOriginal = require('../responses/products-request-response
 const products = cloneDeep(productsResponseOriginal);
 
 module.exports = ((server) => {
-  server
-    .get('/api/products', (req, res) => {
-      setTimeout((() => {
-        res.status(200).json({
-          products: products.response.data,
+    server
+        .get('/api/products', (req, res) => {
+            setTimeout((() => {
+                res.status(200).json(products.response.data);
+            }), 100);
         });
-      }), 100);
-    });
 });

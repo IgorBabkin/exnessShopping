@@ -1,1 +1,1 @@
-export const CONNECTION_URL = 'wss://js-assignment.evolutiongaming.com/ws_api';
+export const CONNECTION_URL = 'http://localhost:3002/api';

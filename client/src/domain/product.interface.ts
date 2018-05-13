@@ -10,7 +10,7 @@ export enum Size {
     XL = 'XL',
 }
 
-export type Sizes = Set<Size>;
+export type Sizes = Size[];
 
 export interface IProduct {
     name: ProductName;

@@ -1,4 +1,4 @@
-import {MapStateToProps} from '../../../../helpers/common.interface';
+import {MapStateToProps} from 'helpers/common.interface';
 import {IProductItem} from './item/productItem.interface';
 
 export const productsSelector: MapStateToProps<IProductItem[]> =
@@ -8,6 +8,6 @@ export const productsSelector: MapStateToProps<IProductItem[]> =
             id: productId,
             name,
             price,
-            sizes: Array.from(sizes),
+            sizes,
         };
     });

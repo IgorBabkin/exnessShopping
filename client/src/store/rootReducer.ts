@@ -1,10 +1,10 @@
-import {IReducers} from 'helpers/common.interface';
-import {basketReducer} from '../reducers/basket/basket.reducer';
+import {IAppState, IReducers} from 'helpers/common.interface';
+import {basketReducer} from 'reducers/basket/basket.reducer';
 import {combineReducers} from 'redux';
-import {IAppState} from '../helpers/common.interface';
+import {productsReducer} from 'reducers/products/products.reducer';
 
 const reducers: IReducers = {
-    products: (state = {}) => state,
+    products: productsReducer,
     basket: basketReducer,
 };
 
