@@ -2,7 +2,7 @@ import * as React from 'react';
 import './basketTable.scss';
 import BasketRow from '../row/basketRow.component';
 import {IBasketProduct, IBasketTableProps} from './basketTable.interface';
-import {Sortable, SortableContent, SortableColumn, ISort} from 'components/sortable';
+import {Sortable, SortableContent, SortableColumn, ISort} from 'views/ui/sortable';
 
 const BasketTable: React.StatelessComponent<IBasketTableProps> =
     ({onItemChange, onItemDelete, onItemAdd, onItemSub, products}) => {

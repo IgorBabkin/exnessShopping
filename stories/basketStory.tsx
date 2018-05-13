@@ -13,8 +13,8 @@ const products: IBasketProduct[] = [
     },
     {
         id: 1,
-        name: 'IPhone',
-        size: Size.M,
+        name: 'Samsung',
+        size: Size.L,
         count: 2,
     },
 ];

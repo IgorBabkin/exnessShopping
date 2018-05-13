@@ -1,5 +1,5 @@
-import {Money, ProductId, ProductName, Size} from '../../../../domain/product.interface';
-import {IAddActionPayload} from '../../../../reducers/basket/basket.actions';
+import {Money, ProductId, ProductName, Size} from '../../../../../domain/product.interface';
+import {IAddActionPayload} from '../../../../../reducers/basket/basket.actions';
 
 export interface IProductItem {
     id: ProductId;

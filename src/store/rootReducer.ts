@@ -1,7 +1,7 @@
 import {IReducers} from 'helpers/common.interface';
 import {basketReducer} from '../reducers/basket/basket.reducer';
 import {combineReducers} from 'redux';
-import {IAppState} from '../domain/state.interface';
+import {IAppState} from '../helpers/common.interface';
 
 const reducers: IReducers = {
     products: (state = {}) => state,

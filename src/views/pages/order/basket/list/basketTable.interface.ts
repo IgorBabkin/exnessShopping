@@ -4,8 +4,8 @@ import {
     BasketRowEditHandler,
     BasketRowSubHandler,
 } from '../row/basketRow.interface';
-import {OrderItemId} from '../../../../domain/order.interface';
-import {ProductName, Size} from '../../../../domain/product.interface';
+import {OrderItemId} from '../../../../../domain/order.interface';
+import {ProductName, Size} from '../../../../../domain/product.interface';
 
 export type ProductCount = number;
 

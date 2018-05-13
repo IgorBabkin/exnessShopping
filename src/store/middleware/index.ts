@@ -3,7 +3,8 @@ import {applyMiddleware} from 'redux';
 import rootEpic from './rootEpic';
 import {createEpicMiddleware} from 'redux-observable';
 import {AnyAction} from 'typescript-fsa';
-import {IAppState, IDependencies} from '../../domain/state.interface';
+import {IDependencies} from '../../helpers/common.interface';
+import {IAppState} from '../../helpers/common.interface';
 
 const composeEnhancers = composeWithDevTools({
     // Specify name here, actionsBlacklist, actionsCreators and other options if needed

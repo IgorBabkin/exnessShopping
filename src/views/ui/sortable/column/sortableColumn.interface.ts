@@ -1,4 +1,4 @@
-import {ISort} from '..';
+import {ISort} from '../index';
 import * as React from 'react';
 
 export interface ISortableColumnProps {

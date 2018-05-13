@@ -1,9 +1,9 @@
 import * as React from 'react';
-import Layout from 'pages/layout/layout.component';
+import Layout from 'layout/layout.component';
 import {Route, withRouter} from 'react-router';
 import {HomePage} from 'pages/home/homePage.component';
 import {BrowserRouter} from 'react-router-dom';
-import {OrderPage} from '../pages/order/checkoutPage.component';
+import {OrderPage} from '../../pages/order/checkoutPage.component';
 import {IApplicationProps} from './application.interface';
 
 const RoutedLayout = withRouter(Layout);

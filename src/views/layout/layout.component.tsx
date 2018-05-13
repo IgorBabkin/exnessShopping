@@ -13,5 +13,3 @@ export default class Layout extends React.PureComponent<any> {
         );
     }
 }
-
-

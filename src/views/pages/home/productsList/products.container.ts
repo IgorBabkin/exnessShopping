@@ -1,8 +1,8 @@
 import {connect} from 'react-redux';
 import ProductsList from './list/productsList.component';
 import {IProductsListDispatchProps, IProductsListStateProps} from './list/productsList.interface';
-import {MapStateToProps} from '../../../helpers/common.interface';
-import {BasketActions} from '../../../reducers/basket/basket.actions';
+import {MapStateToProps} from '../../../../helpers/common.interface';
+import {BasketActions} from '../../../../reducers/basket/basket.actions';
 import {productsSelector} from './products.selectors';
 
 const mapStateToProps: MapStateToProps<IProductsListStateProps> = state => ({

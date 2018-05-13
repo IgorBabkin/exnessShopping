@@ -1,4 +1,4 @@
-import {IAppState} from '../domain/state.interface';
+import {IAppState} from '../helpers/common.interface';
 import {Size} from '../domain/product.interface';
 
 export function getInitialState(): IAppState {

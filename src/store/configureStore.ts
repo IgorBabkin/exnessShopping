@@ -1,6 +1,6 @@
 import {createStore} from 'redux';
 import {getInitialState} from './initialState';
-import {IAppStore} from '../domain/state.interface';
+import {IAppStore} from '../helpers/common.interface';
 import rootReducer from './rootReducer';
 import {createMiddleware} from './middleware';
 import {createDependencies} from './middleware/dependencies';
