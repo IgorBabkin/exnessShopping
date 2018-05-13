@@ -1,4 +1,4 @@
-import {IAPI} from '../config';
+import {IAPI} from 'config';
 import {Observable, AjaxResponse} from 'rxjs';
 
 export interface IConnection {

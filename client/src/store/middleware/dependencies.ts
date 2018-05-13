@@ -1,8 +1,8 @@
-import {ProductsLoader} from '../../services/productsLoader';
-import {CONNECTION_URL} from '../../config';
-import {IDependencies} from '../../domain/common.interface';
-import {BasketStorage} from '../../services/basketStorage';
-import {Connection} from '../../services/connection';
+import {ProductsLoader} from 'services/productsLoader';
+import {CONNECTION_URL} from 'config';
+import {IDependencies} from 'domain/common.interface';
+import {BasketStorage} from 'services/basketStorage';
+import {Connection} from 'services/connection';
 
 export function createDependencies(): IDependencies {
     const connection = new Connection(CONNECTION_URL);

@@ -4,8 +4,8 @@ import {Epic as ReduxEpic} from 'redux-observable';
 import {AnyAction} from 'typescript-fsa';
 import {IProducts} from './product.interface';
 import {IOrder} from './order.interface';
-import {IProductsLoader} from '../services/productLoader.inteface';
-import {IBasketStorage} from '../services/basketStorage.interface';
+import {IProductsLoader} from 'services/productLoader.inteface';
+import {IBasketStorage} from 'services/basketStorage.interface';
 
 export interface IAppState {
     products: IProducts;

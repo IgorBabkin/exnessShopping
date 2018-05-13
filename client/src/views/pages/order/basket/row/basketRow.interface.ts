@@ -1,5 +1,5 @@
-import {OrderItemId} from '../../../../../domain/order.interface';
-import {IUpdateActionPayload} from '../../../../../reducers/basket/basket.actions';
+import {OrderItemId} from 'domain/order.interface';
+import {IUpdateActionPayload} from 'reducers/basket/basket.actions';
 import {IBasketProduct} from '../list/basketTable.interface';
 
 export type BasketRowEditHandler = (data: IUpdateActionPayload) => void;

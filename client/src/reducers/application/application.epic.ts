@@ -1,5 +1,5 @@
 import {AnyAction} from 'typescript-fsa';
-import {Epic} from '../../domain/common.interface';
+import {Epic} from 'domain/common.interface';
 import 'rxjs';
 import 'typescript-fsa-redux-observable';
 import {ApplicationActions} from './application.actions';

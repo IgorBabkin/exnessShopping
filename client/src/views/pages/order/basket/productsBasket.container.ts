@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
-import {MapStateToProps} from '../../../../domain/common.interface';
-import {BasketActions} from '../../../../reducers/basket/basket.actions';
+import {MapStateToProps} from 'domain/common.interface';
+import {BasketActions} from 'reducers/basket/basket.actions';
 import BasketTable from './list/basketTable.component';
 import {IBasketTableDispatchProps, IBasketTableStateProps} from './list/basketTable.interface';
 import {basketProductsSelector} from './productsBasket.selectors';

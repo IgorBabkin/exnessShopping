@@ -1,6 +1,6 @@
 import actionCreatorFactory from 'typescript-fsa';
-import {IOrder, OrderItemId} from '../../domain/order.interface';
-import {ProductId, Size} from '../../domain/product.interface';
+import {IOrder, OrderItemId} from 'domain/order.interface';
+import {ProductId, Size} from 'domain/product.interface';
 
 const actionCreator = actionCreatorFactory('Basket');
 
