@@ -1,11 +1,9 @@
 {
-  "name": "mocks",
+  "name": "exnessShopping-server",
   "version": "1.0.0",
-  "description": "Mock data for testing/developing",
   "scripts": {
     "start": "nodemon src/index.js"
   },
-  "author": "Artem Sitnikov <seestein9@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.2",

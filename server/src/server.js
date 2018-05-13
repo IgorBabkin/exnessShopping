@@ -10,21 +10,21 @@ app.use('/assets', express.static(`${__dirname}/assets`));
 app.use(bodyParser.json());
 app.use(morgan('combined'));
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-  next();
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    next();
 });
 
 const testRequestHandler = require('./handlers/test-request-handler');
-const merchantRequestHandler = require('./handlers/merchant-request-handler');
+const productsRequestHandler = require('./handlers/products-request-handler');
 
 testRequestHandler(app);
-merchantRequestHandler(app);
+productsRequestHandler(app);
 
 // everything else is considered as unknown endpoint => 404
 app.get('*', (req, res) => {
-  res.status(404).send('Not Found');
+    res.status(404).send('Not Found');
 });
 
 // eslint-disable-next-line no-console
