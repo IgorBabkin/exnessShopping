@@ -1,7 +1,7 @@
 import * as React from 'react';
-import {Size} from '../src/domain/product.interface';
-import BasketTable from '../src/pages/order/basket/list/basketTable.component';
-import {IBasketProduct} from '../src/pages/order/basket/list/basketTable.interface';
+import {Size} from 'domain/product.interface';
+import BasketTable from '../basket/list/basketTable.component';
+import {IBasketProduct} from '../basket/list/basketTable.interface';
 import {action} from '@storybook/addon-actions';
 
 const products: IBasketProduct[] = [

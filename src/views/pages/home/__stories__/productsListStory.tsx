@@ -1,8 +1,8 @@
 import * as React from 'react';
 import {action} from '@storybook/addon-actions';
-import ProductsList from '../src/pages/home/productsList/list/productsList.component';
-import {IProductItem} from '../src/pages/home/productsList/item/productItem.interface';
-import {Size} from '../src/domain/product.interface';
+import ProductsList from '../productsList/list/productsList.component';
+import {IProductItem} from '../productsList/item/productItem.interface';
+import {Size} from 'domain/product.interface';
 
 const products: IProductItem[] = [
     {
