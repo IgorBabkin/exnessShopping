@@ -7,7 +7,7 @@ import {ProductsActions} from './products.actions';
 const productsFetchEpic: Epic = (action$, store, {productsLoader}) =>
     action$
         .ofAction(ProductsActions.Fetch.started)
-        .mergeMap(() =>
+        .mergeMapTo(
             productsLoader.load().map(data =>
                 ProductsActions.Fetch.done({
                     params: undefined,

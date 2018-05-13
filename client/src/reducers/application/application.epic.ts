@@ -19,7 +19,7 @@ const unloadEpic: Epic = (action$, store, {basketStorage}) =>
 const startEpic: Epic = (action$, store, {basketStorage}) =>
     action$
         .ofAction(ApplicationActions.Start)
-        .mergeMap(() =>
+        .mergeMapTo(
             ActionsObservable.from<AnyAction>([
                 BasketActions.Restore(basketStorage.getState()),
                 ProductsActions.Fetch.started(undefined),
