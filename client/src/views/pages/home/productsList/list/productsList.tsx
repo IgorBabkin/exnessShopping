@@ -1,5 +1,5 @@
 import * as React from 'react';
-import ProductItem from '../item/productItem.component';
+import ProductItem from '../item/productItem';
 import {IProductsListProps} from './productsList.interface';
 import './productList.scss';
 

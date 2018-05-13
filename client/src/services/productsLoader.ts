@@ -1,4 +1,4 @@
-import {IProductsLoader} from './productLoader.inteface';
+import {IProductsLoader} from './productsLoader.inteface';
 import {IProducts} from 'domain/product.interface';
 import {Observable} from 'rxjs';
 import {IConnection} from './connection.interface';

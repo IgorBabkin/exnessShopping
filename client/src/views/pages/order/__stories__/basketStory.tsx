@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {Size} from 'domain/product.interface';
-import BasketTable from '../basket/list/basketTable.component';
+import BasketTable from '../basket/list/basketTable';
 import {IBasketProduct} from '../basket/list/basketTable.interface';
 import {action} from '@storybook/addon-actions';
 

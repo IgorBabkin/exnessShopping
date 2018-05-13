@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import ProductsList from './list/productsList.component';
+import ProductsList from './list/productsList';
 import {IProductsListDispatchProps, IProductsListStateProps} from './list/productsList.interface';
 import {MapStateToProps} from 'domain/common.interface';
 import {BasketActions} from 'reducers/basket/basket.actions';

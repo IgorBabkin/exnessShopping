@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {action} from '@storybook/addon-actions';
-import ProductsList from '../productsList/list/productsList.component';
+import ProductsList from '../productsList/list/productsList';
 import {IProductItem} from '../productsList/item/productItem.interface';
 import {Size} from 'domain/product.interface';
 
