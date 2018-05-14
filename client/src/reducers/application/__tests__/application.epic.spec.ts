@@ -1,54 +1,64 @@
-import {createEpicMiddleware} from 'redux-observable';
 import {applicationEpic} from '../application.epic';
-import {MockStore} from 'redux-mock-store';
-// tslint:disable:no-var-requires
-const createMockStore = require('redux-mock-store');
-import {IAppState, IDependencies} from 'domain/common.interface';
-import {AnyAction} from 'typescript-fsa';
+import {IAppState, IAppStore, IDependencies} from 'domain/common.interface';
 import {ApplicationActions} from '../application.actions';
-import {Mock, MockBehavior, Times} from 'moq.ts';
+import {Mock, Times} from 'moq.ts';
 import {IBasketStorage} from 'services/basketStorage.interface';
+import {ProductsActions} from '../../products/products.actions';
+import {BasketActions} from '../../basket/basket.actions';
+import {IOrder} from 'domain/order.interface';
+import {createLooseMock, expectEpic, runEpic} from '../../../helpers/test';
 
 describe('application.epic', () => {
-    let store: MockStore<IAppState>;
     let basketStorageMock: Mock<IBasketStorage>;
-    let initialState: IAppState;
-
-    function configureMockStore() {
-        basketStorageMock = new Mock<IBasketStorage>();
-        const epicMiddleware = createEpicMiddleware<AnyAction, IAppState, IDependencies>(
-            applicationEpic,
-            {
-                dependencies: createDependencies(),
-            },
-        );
-        const mockStore = createMockStore([epicMiddleware]);
-        return mockStore(initialState);
-    }
-
-    function createDependencies() {
-        basketStorageMock = new Mock<IBasketStorage>();
-        basketStorageMock.setBehaviorStrategy(MockBehavior.Loose);
-        return {
-            basketStorage: basketStorageMock.object(),
-        } as IDependencies;
-    }
+    let dependencies: IDependencies;
 
     beforeEach(() => {
-        initialState = {} as IAppState;
+        basketStorageMock = createLooseMock<IBasketStorage>();
+        dependencies = {
+            basketStorage: basketStorageMock.object(),
+        } as IDependencies;
     });
 
     it('should save basket to session on unload', () => {
         const basket = [];
-        initialState.basket = basket;
+        const state = {
+            basket,
+        } as IAppState;
 
-        store = configureMockStore();
-        store.dispatch(ApplicationActions.Unload());
+        runEpic<IAppState, IDependencies>(applicationEpic, {
+            action: ApplicationActions.Unload(),
+            state,
+            dependencies,
+        });
 
         basketStorageMock.verify(b => b.setState(basket), Times.Once());
     });
 
-    it('startEpic', () => {
+    it('should restore basket and fetch products on start', () => {
+        const order = [{
+            id: 2,
+        }] as IOrder;
 
+        basketStorageMock
+            .setup(b => b.getState())
+            .returns(order);
+
+        expectEpic<IAppState, IDependencies>(applicationEpic, {
+            input: {
+                marble: 'a----|',
+                values: {
+                    a: ApplicationActions.Start(),
+                },
+            },
+            output: {
+                marble: '(bc)-|',
+                values: {
+                    b: ProductsActions.Fetch.started(undefined),
+                    c: BasketActions.Restore(order),
+                },
+            },
+            store: new Mock<IAppStore>().object(),
+            dependencies,
+        });
     });
 });
