@@ -1,8 +1,8 @@
 import * as React from 'react';
 
-export type SortableData = object[];
+export type ISortableData = object[];
 
 export interface ISortableContentProps {
-    data: SortableData;
-    children: (data: SortableData) => React.ReactNode;
+    data: ISortableData;
+    children: (data: ISortableData) => React.ReactNode;
 }

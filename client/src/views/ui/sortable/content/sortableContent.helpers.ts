@@ -1,16 +1,16 @@
-import {SortableData} from './sortableContent.interface';
+import {ISortableData} from './sortableContent.interface';
 import {SortDirection} from '../context/sortableContext.interface';
 
-export function sortData(data: SortableData, key: string, direction: SortDirection): SortableData {
+export function sortData(data: ISortableData, key: string, direction: SortDirection): ISortableData {
     return data.sort((a, b) => {
         if (a[key] === b[key]) {
-            return -1;
+            return 0;
         }
 
         if (direction === SortDirection.ASC) {
-            return a[key] > b[key] ? 1 : 0;
+            return a[key] > b[key] ? 1 : -1;
         }
 
-        return a[key] > b[key] ? 0 : 1;
+        return a[key] > b[key] ? -1 : 1;
     });
 }
