@@ -1,6 +1,8 @@
 import * as React from 'react';
 import './basketRow.scss';
 import {IBasketRowProps} from './basketRow.interface';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import {faPlusCircle, faMinusCircle, faTrash} from '@fortawesome/fontawesome-free-solid';
 
 class BasketRow extends React.PureComponent<IBasketRowProps> {
     private countInput: HTMLInputElement;
@@ -10,20 +12,30 @@ class BasketRow extends React.PureComponent<IBasketRowProps> {
 
         return (
             <tr>
-                <td>{name}</td>
-                <td>{size}</td>
-                <td>{price}</td>
-                <td>
-                    <button onClick={this.onSub}>-</button>
-                    &nbsp;
-                    <input type="number" ref={node => this.countInput = node} value={count} onChange={this.onEdit}/>
-                    &nbsp;
-                    <button onClick={this.onAdd}>+</button>
-                    &nbsp;
-                    &nbsp;
-                    <button onClick={this.onDelete}>Delete</button>
+                <td className="align-middle">{name}</td>
+                <td className="align-middle">{size}</td>
+                <td className="align-middle">{price}</td>
+                <td className="align-middle">
+                    <div className="input-group">
+                        <button className="btn btn-secondary" onClick={this.onSub}>
+                            <FontAwesomeIcon icon={faMinusCircle}/>
+                        </button>
+                        <input
+                            type="number"
+                            className="form-control"
+                            ref={node => this.countInput = node}
+                            value={count}
+                            onChange={this.onEdit}
+                        />
+                        <button className="btn btn-secondary" onClick={this.onAdd}>
+                            <FontAwesomeIcon icon={faPlusCircle}/>
+                        </button>
+                        <button className="btn btn-danger" onClick={this.onDelete}>
+                            <FontAwesomeIcon icon={faTrash}/>
+                        </button>
+                    </div>
                 </td>
-                <td>{total}</td>
+                <td className="align-middle">{total}</td>
             </tr>
         );
     }

@@ -1,5 +1,5 @@
 import {IAppState} from 'domain/common.interface';
-import {IBasketProduct} from './list/basketTable.interface';
+import {IBasketProduct} from './table/basketTable.interface';
 import {createSelector} from 'reselect';
 import {IOrder} from '../../../../domain/order.interface';
 import {IProducts, Money} from '../../../../domain/product.interface';

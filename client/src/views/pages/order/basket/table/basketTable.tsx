@@ -2,32 +2,19 @@ import * as React from 'react';
 import './basketTable.scss';
 import BasketRow from '../row/basketRow.component';
 import {IBasketProduct, IBasketTableProps} from './basketTable.interface';
-import {Sortable, SortableContent, SortableColumn, ISort} from 'views/ui/sortable';
+import {Sortable, SortableContent} from 'views/ui/sortable';
+import {SortableTitle} from '../sortableTitle/sortableTitle';
 
 const BasketTable: React.StatelessComponent<IBasketTableProps> =
     ({onItemChange, onItemDelete, onItemAdd, onItemSub, products, total}) => {
-        const sortBy = (key: string, sort: ISort) => () => sort(key);
-
         return (
             <Sortable>
-                <table>
+                <table className="table">
                     <thead>
-                    <tr>
-                        <SortableColumn>
-                            {(sort) => (
-                                <th onClick={sortBy('name', sort)}>Name</th>
-                            )}
-                        </SortableColumn>
-                        <SortableColumn>
-                            {(sort) => (
-                                <th onClick={sortBy('size', sort)}>Size</th>
-                            )}
-                        </SortableColumn>
-                        <SortableColumn>
-                            {(sort) => (
-                                <th onClick={sortBy('price', sort)}>Price</th>
-                            )}
-                        </SortableColumn>
+                    <tr className="cursor-default">
+                        <SortableTitle sortField="name">Name</SortableTitle>
+                        <SortableTitle sortField="size">Size</SortableTitle>
+                        <SortableTitle sortField="price">Price</SortableTitle>
                         <th>Action</th>
                         <th>Total</th>
                     </tr>
@@ -35,8 +22,8 @@ const BasketTable: React.StatelessComponent<IBasketTableProps> =
 
                     <tfoot>
                     <tr>
-                        <td>Total</td>
-                        <td colSpan={4} style={{textAlign: 'right'}}>{total}</td>
+                        <td colSpan={4}>Total</td>
+                        <td>{total}</td>
                     </tr>
                     </tfoot>
 

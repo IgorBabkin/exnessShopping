@@ -1,7 +1,7 @@
 import {basketProductsSelector} from '../productsBasket.selectors';
 import {Size} from '../../../../../domain/product.interface';
 import {expect} from 'chai';
-import {IBasketProduct} from '../list/basketTable.interface';
+import {IBasketProduct} from '../table/basketTable.interface';
 
 describe('productsBasket.selectors', () => {
     it('selects basket item from state', () => {

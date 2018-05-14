@@ -10,9 +10,14 @@
     "test": "mocha -r ts-node/register src/**/*.spec.ts"
   },
   "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.8",
+    "@fortawesome/fontawesome-free-solid": "^5.0.13",
+    "@fortawesome/react-fontawesome": "^0.0.19",
     "@types/lodash": "^4.14.92",
     "@types/react-router-dom": "^4.2.3",
     "@types/reselect": "^2.2.0",
+    "bootstrap": "^4.1.1",
+    "bootstrap-material-design": "4.1.1",
     "lodash": "^4.17.4",
     "material-ui": "^0.20.0",
     "react": "^16.2.0",

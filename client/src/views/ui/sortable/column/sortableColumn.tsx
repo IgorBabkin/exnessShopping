@@ -6,7 +6,7 @@ export const SortableColumn: React.StatelessComponent<ISortableColumnProps> =
     ({children}) => {
         return (
             <SortableContext.Consumer>
-                {({sort}) => children(sort)}
+                {({sort, direction, key}) => children(sort, key, direction)}
             </SortableContext.Consumer>
         );
     };
