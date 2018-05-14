@@ -18,8 +18,6 @@ export function expectEpic<S, D>(epic: Epic<Action, S, D>, options: IExpectEpicO
     testScheduler
         .expectObservable(epic(action$, store, dependencies))
         .toBe(output.marble, output.values);
-
-    testScheduler.flush();
 }
 
 export function runEpic<S, D>(epic: Epic<Action, S, D>, options: IRunEpicOptions<S, D>): void {
