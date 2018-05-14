@@ -24,8 +24,7 @@
     "shortid": "^2.2.8",
     "typescript-fsa": "^2.5.0",
     "typescript-fsa-reducers": "^0.4.5",
-    "typescript-fsa-redux-observable": "^0.18.0",
-    "uniqid": "^4.1.1"
+    "typescript-fsa-redux-observable": "^0.18.0"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.3.6",
