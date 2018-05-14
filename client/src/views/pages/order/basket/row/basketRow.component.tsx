@@ -6,13 +6,13 @@ class BasketRow extends React.PureComponent<IBasketRowProps> {
     private countInput: HTMLInputElement;
 
     render() {
-        const {id, name, count, size} = this.props.product;
+        const {name, count, size, price, total} = this.props.product;
 
         return (
             <tr>
-                <td>{id}</td>
                 <td>{name}</td>
                 <td>{size}</td>
+                <td>{price}</td>
                 <td>
                     <button onClick={this.onSub}>-</button>
                     &nbsp;
@@ -23,6 +23,7 @@ class BasketRow extends React.PureComponent<IBasketRowProps> {
                     &nbsp;
                     <button onClick={this.onDelete}>Delete</button>
                 </td>
+                <td>{total}</td>
             </tr>
         );
     }

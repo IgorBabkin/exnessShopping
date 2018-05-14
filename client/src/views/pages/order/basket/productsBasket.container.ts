@@ -3,10 +3,11 @@ import {MapStateToProps} from 'domain/common.interface';
 import {BasketActions} from 'reducers/basket/basket.actions';
 import BasketTable from './list/basketTable';
 import {IBasketTableDispatchProps, IBasketTableStateProps} from './list/basketTable.interface';
-import {basketProductsSelector} from './productsBasket.selectors';
+import {basketProductsSelector, basketProductsTotalSelector} from './productsBasket.selectors';
 
 const mapStateToProps: MapStateToProps<IBasketTableStateProps> = state => ({
     products: basketProductsSelector(state),
+    total: basketProductsTotalSelector(state),
 });
 
 const mapDispatchToProps: IBasketTableDispatchProps = {

@@ -6,7 +6,7 @@ import {expect} from 'chai';
 describe('basketStorage', () => {
     let storageMock: Mock<Storage>;
     const basket = [{
-        id: 3,
+        id: '3',
     }] as IOrder;
 
     beforeEach(() => {

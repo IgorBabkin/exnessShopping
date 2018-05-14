@@ -1,6 +1,6 @@
 import {ProductId, Size} from './product.interface';
 
-export type OrderItemId = number;
+export type OrderItemId = string;
 
 export interface IOrderItem {
     id: OrderItemId;

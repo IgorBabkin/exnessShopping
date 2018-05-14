@@ -36,7 +36,7 @@ describe('application.epic', () => {
 
     it('should restore basket and fetch products on start', () => {
         const order = [{
-            id: 2,
+            id: '2',
         }] as IOrder;
 
         basketStorageMock

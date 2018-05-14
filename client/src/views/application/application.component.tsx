@@ -3,7 +3,7 @@ import Layout from '../layout/layout.component';
 import {Route, withRouter} from 'react-router';
 import {HomePage} from '../pages/home/homePage';
 import {BrowserRouter} from 'react-router-dom';
-import {OrderPage} from '../pages/order/checkoutPage';
+import {OrderPage} from '../pages/order/orderPage.container';
 import {IApplicationProps} from './application.interface';
 
 const RoutedLayout = withRouter(Layout);

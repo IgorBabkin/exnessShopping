@@ -9,7 +9,7 @@ describe('basket.reducer', () => {
         const productId = '2';
         const size = Size.XL;
         const expected = [{
-            id: 0,
+            id: '0',
             count: 1,
             productId,
             size,
@@ -27,14 +27,14 @@ describe('basket.reducer', () => {
         const productId = '2';
         const size = Size.XL;
         const expected = [{
-            id: 0,
+            id: '0',
             count: 2,
             productId,
             size,
         }] as IOrder;
 
         const actual = basketReducer([{
-            id: 0,
+            id: '0',
             count: 1,
             productId,
             size,
@@ -47,7 +47,7 @@ describe('basket.reducer', () => {
     });
 
     it('increment', () => {
-        const id = 3;
+        const id = '3';
         const expected = 2;
 
         const actual = basketReducer([{
@@ -59,7 +59,7 @@ describe('basket.reducer', () => {
     });
 
     it('decrement', () => {
-        const id = 3;
+        const id = '3';
         const expected = 0;
 
         const actual = basketReducer([{
@@ -71,7 +71,7 @@ describe('basket.reducer', () => {
     });
 
     it('delete', () => {
-        const id = 3;
+        const id = '3';
 
         const actual = basketReducer([{
             id,

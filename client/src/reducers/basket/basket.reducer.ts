@@ -2,6 +2,7 @@ import {reducerWithInitialState} from 'typescript-fsa-reducers';
 import {BasketActions, IAddActionPayload, IUpdateActionPayload} from './basket.actions';
 import {IOrder, OrderItemId} from 'domain/order.interface';
 import {distinctOrder} from './basket.helpers';
+var shortid = require('shortid');
 
 export const basketReducer = reducerWithInitialState<IOrder>([])
     .case(BasketActions.Add, addItemHandler)
@@ -15,7 +16,7 @@ function addItemHandler(state: IOrder, payload: IAddActionPayload): IOrder {
     return distinctOrder([
         ...state,
         {
-            id: state.length,
+            id: shortid.generate(),
             count: 1,
             ...payload,
         },
