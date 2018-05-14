@@ -2,25 +2,24 @@ import {basketReducer} from '../basket.reducer';
 import {BasketActions} from '../basket.actions';
 import {Size} from '../../../domain/product.interface';
 import {expect} from 'chai';
-import {IOrder} from '../../../domain/order.interface';
+import {IOrder, IOrderItem} from '../../../domain/order.interface';
 
 describe('basket.reducer', () => {
     it('add', () => {
         const productId = '2';
         const size = Size.XL;
-        const expected = [{
-            id: '0',
+        const expected = {
             count: 1,
             productId,
             size,
-        }] as IOrder;
+        } as IOrderItem;
 
         const actual = basketReducer([], BasketActions.Add({
             productId,
             size,
         }));
 
-        expect(actual).to.deep.equal(expected);
+        expect(actual[0]).to.include(expected);
     });
 
     it('add to existing', () => {

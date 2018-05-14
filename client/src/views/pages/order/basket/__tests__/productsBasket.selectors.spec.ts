@@ -11,6 +11,7 @@ describe('productsBasket.selectors', () => {
             size: Size.XL,
             count: 2,
             price: 200,
+            total: 400,
         }] as IBasketProduct[];
 
         const actual = basketProductsSelector.resultFunc(

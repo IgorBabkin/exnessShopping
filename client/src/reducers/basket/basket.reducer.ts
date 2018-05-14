@@ -2,7 +2,7 @@ import {reducerWithInitialState} from 'typescript-fsa-reducers';
 import {BasketActions, IAddActionPayload, IUpdateActionPayload} from './basket.actions';
 import {IOrder, OrderItemId} from 'domain/order.interface';
 import {distinctOrder} from './basket.helpers';
-var shortid = require('shortid');
+import * as shortid from 'shortid';
 
 export const basketReducer = reducerWithInitialState<IOrder>([])
     .case(BasketActions.Add, addItemHandler)

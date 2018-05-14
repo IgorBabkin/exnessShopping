@@ -8,7 +8,7 @@ class ProductItem extends React.PureComponent<IProductItemProps> {
     private sizeSelector: HTMLSelectElement;
 
     render() {
-        const {id, name, price, sizes} = this.props.product;
+        const {name, price, sizes} = this.props.product;
 
         return (
             <form className="product-card media d-flex align-items-center p-2" onSubmit={this.onSubmit}>
