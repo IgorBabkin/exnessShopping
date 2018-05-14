@@ -6,9 +6,9 @@ import './productList.scss';
 const ProductsList: React.StatelessComponent<IProductsListProps> =
     ({products, onAddToBasket}) => {
         return (
-            <div className="products-list">
+            <div className="row">
                 {products.map(item => (
-                    <div className="products-list__item" key={item.id}>
+                    <div className="col-auto" key={item.id}>
                         <ProductItem
                             product={item}
                             onAddToBasket={onAddToBasket}

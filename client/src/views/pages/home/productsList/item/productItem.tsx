@@ -11,18 +11,21 @@ class ProductItem extends React.PureComponent<IProductItemProps> {
         const {id, name, price, sizes} = this.props.product;
 
         return (
-            <form className="product-card" onSubmit={this.onSubmit}>
-                <div>{id}</div>
-                <div>{name}</div>
-                <div>{price}</div>
-                <div>
-                    <select name="size" ref={node => this.sizeSelector = node}>
+            <form className="product-card media d-flex align-items-center p-2" onSubmit={this.onSubmit}>
+                <img src={require(`assets/${name.toLowerCase()}.png`)} width={100} className="mr-3"/>
+                <div className="media-body">
+                    <h6>{name}</h6>
+                    <div className="text-black-50">Price: {price}</div>
+                    <select name="size" ref={node => this.sizeSelector = node} className="custom-select mb-2">
                         {sizes.map(size => (
                             <option key={size} value={size}>{size}</option>
                         ))}
                     </select>
+                    <button type="submit" className="btn btn-raised bg-primary text-white btn-block">
+                        Add to basket
+                    </button>
                 </div>
-                <button type="submit">Add to basket</button>
+                <div className="clearfix"/>
             </form>
         );
     }
