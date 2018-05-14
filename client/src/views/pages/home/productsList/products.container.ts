@@ -6,7 +6,7 @@ import {BasketActions} from 'reducers/basket/basket.actions';
 import {productsSelector} from './products.selectors';
 
 const mapStateToProps: MapStateToProps<IProductsListStateProps> = state => ({
-    products: productsSelector(state, undefined),
+    products: productsSelector(state),
 });
 
 const mapDispatchToProps: IProductsListDispatchProps = {

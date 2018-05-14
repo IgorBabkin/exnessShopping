@@ -6,7 +6,7 @@ import {IBasketTableDispatchProps, IBasketTableStateProps} from './list/basketTa
 import {basketProductsSelector} from './productsBasket.selectors';
 
 const mapStateToProps: MapStateToProps<IBasketTableStateProps> = state => ({
-    products: basketProductsSelector(state, undefined),
+    products: basketProductsSelector(state),
 });
 
 const mapDispatchToProps: IBasketTableDispatchProps = {
