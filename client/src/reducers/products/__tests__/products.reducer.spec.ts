@@ -1,6 +1,6 @@
 import {productsReducer} from '../products.reducer';
 import {ProductsActions} from '../products.actions';
-import {IProducts} from '../../../domain/product.interface';
+import {IProducts} from 'domain/product.interface';
 import {expect} from 'chai';
 
 describe('products.reducer', () => {

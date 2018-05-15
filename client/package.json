@@ -6,7 +6,7 @@
     "storybook": "start-storybook -p 6006",
     "start": "webpack-dev-server --config webpack.dev.js",
     "tslint": "tslint --fix -p tsconfig.json -t verbose",
-    "test": "mocha -r ts-node/register src/**/*.spec.ts",
+    "test": "mocha -r ts-node/register -r tsconfig-paths/register src/**/*.spec.ts",
     "build": "webpack --config webpack.prod.js"
   },
   "dependencies": {
@@ -63,6 +63,7 @@
     "sass-loader": "^6.0.6",
     "source-map-loader": "^0.2.3",
     "ts-node": "^4.1.0",
+    "tsconfig-paths": "^3.3.2",
     "tslint": "^5.8.0",
     "tslint-react": "^3.3.3",
     "typescript": "^2.6.2",

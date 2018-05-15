@@ -1,5 +1,5 @@
 import {productsSelector} from '../products.selectors';
-import {Size} from '../../../../../domain/product.interface';
+import {Size} from 'domain/product.interface';
 import {expect} from 'chai';
 import {IProductItem} from '../item/productItem.interface';
 

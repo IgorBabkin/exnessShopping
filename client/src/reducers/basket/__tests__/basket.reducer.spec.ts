@@ -1,8 +1,8 @@
 import {basketReducer} from '../basket.reducer';
 import {BasketActions} from '../basket.actions';
-import {Size} from '../../../domain/product.interface';
+import {Size} from 'domain/product.interface';
 import {expect} from 'chai';
-import {IOrder, IOrderItem} from '../../../domain/order.interface';
+import {IOrder, IOrderItem} from 'domain/order.interface';
 
 describe('basket.reducer', () => {
     it('add', () => {

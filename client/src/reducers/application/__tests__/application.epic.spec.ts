@@ -6,7 +6,7 @@ import {IBasketStorage} from 'services/basketStorage.interface';
 import {ProductsActions} from '../../products/products.actions';
 import {BasketActions} from '../../basket/basket.actions';
 import {IOrder} from 'domain/order.interface';
-import {createLooseMock, expectEpic, runEpic} from '../../../helpers/test';
+import {createLooseMock, expectEpic, runEpic} from 'helpers/test';
 
 describe('application.epic', () => {
     let basketStorageMock: Mock<IBasketStorage>;

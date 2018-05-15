@@ -1,6 +1,6 @@
 import {assert} from 'chai';
 import {ProductsLoader} from '../productsLoader';
-import {API} from '../../config';
+import {API} from 'config';
 import {Mock} from 'moq.ts';
 import {IConnection} from '../connection.interface';
 import {TestScheduler, AjaxResponse, Observable} from 'rxjs';

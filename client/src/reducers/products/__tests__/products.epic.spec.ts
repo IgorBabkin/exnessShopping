@@ -1,7 +1,7 @@
 import {IAppState, IAppStore, IDependencies} from 'domain/common.interface';
 import {Mock} from 'moq.ts';
 import {ProductsActions} from '../products.actions';
-import {createLooseMock, expectEpic} from '../../../helpers/test';
+import {createLooseMock, expectEpic} from 'helpers/test';
 import {productsEpic} from '../products.epic';
 import {IProductsLoader} from 'services/productsLoader.inteface';
 import {IProducts, IProduct} from 'domain/product.interface';

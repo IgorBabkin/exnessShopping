@@ -1,8 +1,8 @@
 import {IAppState} from 'domain/common.interface';
 import {IBasketProduct} from './table/basketTable.interface';
 import {createSelector} from 'reselect';
-import {IOrder} from '../../../../domain/order.interface';
-import {IProducts, Money} from '../../../../domain/product.interface';
+import {IOrder} from 'domain/order.interface';
+import {IProducts, Money} from 'domain/product.interface';
 
 export const basketProductsSelector =
     createSelector<IAppState, IOrder, IProducts, IBasketProduct[]>([

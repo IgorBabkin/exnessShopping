@@ -1,5 +1,5 @@
 import {basketProductsSelector} from '../productsBasket.selectors';
-import {Size} from '../../../../../domain/product.interface';
+import {Size} from 'domain/product.interface';
 import {expect} from 'chai';
 import {IBasketProduct} from '../table/basketTable.interface';
 
