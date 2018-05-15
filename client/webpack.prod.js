@@ -3,12 +3,12 @@ const common = require('./webpack.common');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const DefinePlugin = require('webpack').DefinePlugin;
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const path = require('path');
 
 module.exports = merge(common, {
     output: {
-        publicPath: '/exnessShopping',
+        publicPath: 'exnessShopping/',
     },
     plugins: [
         new HtmlWebpackPlugin({

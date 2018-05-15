@@ -1,8 +1,8 @@
 import * as React from 'react';
 import Layout from '../layout/layout.component';
-import {Route, withRouter} from 'react-router';
+import {Route, Switch, withRouter} from 'react-router';
 import {HomePage} from '../pages/home/homePage';
-import {BrowserRouter} from 'react-router-dom';
+import {HashRouter} from 'react-router-dom';
 import {OrderPage} from '../pages/order/orderPage.container';
 import {IApplicationProps} from './application.interface';
 
@@ -20,12 +20,14 @@ export default class Application extends React.PureComponent<IApplicationProps> 
 
     render() {
         return (
-            <BrowserRouter>
+            <HashRouter>
                 <RoutedLayout>
-                    <Route path="/" component={HomePage} exact={true}/>
-                    <Route path="/order" component={OrderPage} exact={true}/>
+                    <Switch>
+                        <Route path="/" component={HomePage} exact={true}/>
+                        <Route path="/order" component={OrderPage} exact={true}/>
+                    </Switch>
                 </RoutedLayout>
-            </BrowserRouter>
+            </HashRouter>
         );
     }
 }

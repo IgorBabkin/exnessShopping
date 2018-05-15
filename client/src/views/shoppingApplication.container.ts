@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import Application from './application/application.component';
+import Application from './application/application';
 import {IApplicationDispatchProps} from './application/application.interface';
 import {ApplicationActions} from 'reducers/application/application.actions';
 
