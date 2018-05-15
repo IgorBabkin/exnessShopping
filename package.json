@@ -12,7 +12,7 @@
     "start:client": "cd client && yarn start",
     "start:server": "cd server && yarn start",
     "storybook": "cd client && yarn storybook",
-    "tslint": "cd client && yarn tslint",
+    "lint": "cd client && yarn tslint",
     "test": "cd client && yarn test",
     "build": "rimraf dist && cd client && yarn build",
     "start:prod-server": "http-server dist -a localhost -p 3330",
