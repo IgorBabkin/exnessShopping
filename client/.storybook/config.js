@@ -1,7 +1,7 @@
-import {addDecorator, configure} from '@storybook/react';
+import {configure, addDecorator} from '@storybook/react';
 import React from "react";
 import {setOptions} from "@storybook/addon-options";
-import Layout from "views/layout/layout.component";
+import {LayoutDecorator} from "./layoutDecorator";
 
 setOptions({
     name: 'storybook',
@@ -13,12 +13,7 @@ setOptions({
     downPanelInRight: false
 });
 
-const MaterialDecorator = (storyFn) => (
-    <Layout>
-        {storyFn()}
-    </Layout>
-);
-addDecorator(MaterialDecorator);
+addDecorator(LayoutDecorator);
 
 // automatically import all files ending in *.stories.js
 const req = require.context('../src', true, /.stories.tsx$/);

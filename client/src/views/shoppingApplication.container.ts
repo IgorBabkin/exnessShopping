@@ -2,6 +2,7 @@ import {connect} from 'react-redux';
 import Application from './application/application';
 import {IApplicationDispatchProps} from './application/application.interface';
 import {ApplicationActions} from 'reducers/application/application.actions';
+import './common.scss';
 
 const mapDispatchToProps: IApplicationDispatchProps = {
     onStart: ApplicationActions.Start,

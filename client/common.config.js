@@ -2,7 +2,7 @@ const path = require("path");
 
 module.exports = {
     resolve: {
-        extensions: ['.js', '.ts', '.tsx', '.scss'],
+        extensions: ['.js', '.jsx', '.ts', '.tsx', '.scss'],
         modules: [
             path.resolve(__dirname, './src'),
             'node_modules'
@@ -17,7 +17,7 @@ module.exports = {
             },
             {
                 enforce: "pre",
-                test: /\.js$/,
+                test: /\.jsx?$/,
                 exclude: /node_modules/,
                 loader: "source-map-loader"
             },
