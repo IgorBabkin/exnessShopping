@@ -1,4 +1,4 @@
-import {composeWithDevTools} from 'redux-devtools-extension';
+import {composeWithDevTools} from 'redux-devtools-extension/developmentOnly';
 import {applyMiddleware} from 'redux';
 import rootEpic from './rootEpic';
 import {createEpicMiddleware} from 'redux-observable';

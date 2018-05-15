@@ -1,27 +1,21 @@
-const commonConfig = require('./common.config');
+const merge = require('webpack-merge');
+const common = require('./webpack.common');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HotModuleReplacementPlugin = require('webpack').HotModuleReplacementPlugin;
+const DefinePlugin = require('webpack').DefinePlugin;
 
-module.exports = {
-    context: path.resolve(__dirname, './src'),
-    entry: './index.tsx',
-    output: {
-        path: path.resolve(__dirname, 'dist'),
-        publicPath: '/',
-        filename: 'bundle.js',
-    },
-    resolve: commonConfig.resolve,
-    module: commonConfig.module,
-    devtool: 'source-map',
-
+module.exports = merge(common, {
     plugins: [
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'src/index.html.ejs'),
             inject: 'body',
             favicon: 'assets/favicon.ico',
         }),
-        new HotModuleReplacementPlugin()
+        new HotModuleReplacementPlugin(),
+        new DefinePlugin({
+            'process.env.NODE_ENV': JSON.stringify('development')
+        }),
     ],
 
     devServer: {
@@ -30,4 +24,6 @@ module.exports = {
         hotOnly: true,
         historyApiFallback: true,
     },
-};
+
+    devtool: 'source-map',
+});
