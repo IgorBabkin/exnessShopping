@@ -2,6 +2,8 @@
   "name": "exnessShopping",
   "version": "1.0.0",
   "license": "MIT",
+  "author": "Igor Babkin",
+  "homepage": "https://github.com/IgorBabkin/exnessShopping",
   "scripts": {
     "install:all": "npm-run-all --parallel install:client install:server",
     "install:client": "cd client && yarn install",

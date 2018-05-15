@@ -7,6 +7,9 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 const path = require('path');
 
 module.exports = merge(common, {
+    output: {
+        publicPath: '/exnessShopping',
+    },
     plugins: [
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'src/index.html.ejs'),
@@ -24,4 +27,5 @@ module.exports = merge(common, {
             sourceMap: true,
         }),
     ],
+    devtool: 'source-map',
 });
