@@ -15,9 +15,9 @@
     "tslint": "cd client && yarn tslint",
     "test": "cd client && yarn test",
     "build": "rimraf dist && cd client && yarn build",
-    "start:prod-server": "http-server dist -a localhost -p 3330 --proxy http://localhost:3330/exnessShopping",
+    "start:prod-server": "http-server dist -a localhost -p 3330",
     "start:prod": "yarn build && yarn start:prod-server",
-    "predeploy": "yarn build",
+    "predeploy": "yarn build --env.BASE_NAME=/exnessShopping",
     "deploy": "gh-pages -d dist"
   },
   "devDependencies": {

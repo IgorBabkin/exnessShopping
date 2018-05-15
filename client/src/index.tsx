@@ -6,7 +6,9 @@ import {ShoppingApplication} from './views/shoppingApplication.container';
 
 render(
     <Provider store={configureStore()}>
-        <ShoppingApplication/>
+        <ShoppingApplication
+            routerBasename={process.env.BASE_NAME}
+        />
     </Provider>,
     document.getElementById('root'),
 );

@@ -6,9 +6,9 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const path = require('path');
 
-module.exports = merge(common, {
+module.exports = env => merge(common, {
     output: {
-        publicPath: 'exnessShopping/',
+        publicPath: (env && env.BASE_NAME ? env.BASE_NAME : '') + '/',
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -17,7 +17,8 @@ module.exports = merge(common, {
             favicon: 'assets/favicon.ico',
         }),
         new DefinePlugin({
-            'process.env.NODE_ENV': JSON.stringify('production')
+            'process.env.NODE_ENV': JSON.stringify('production'),
+            'process.env.BASE_NAME': JSON.stringify(env && env.BASE_NAME ? env.BASE_NAME : ''),
         }),
         new CopyWebpackPlugin([{
             from: path.resolve(__dirname, 'api'),
@@ -27,5 +28,4 @@ module.exports = merge(common, {
             sourceMap: true,
         }),
     ],
-    devtool: 'source-map',
 });
